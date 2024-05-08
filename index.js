@@ -3,6 +3,8 @@ const cors = require("cors");
 const helmet = require("helmet");
 
 const { dataBase } = require("./db");
+const student = require("./routes/student.route");
+const teacher = require("./routes/teacher.route");
 
 const app = express();
 
@@ -19,6 +21,11 @@ dataBase();
 app.get("/", (req, res) => {
   res.send("School Management APIs");
 });
+
+//Student Route
+app.use("/api/v1/students", student);
+//Teacher Route
+app.use("/api/v1/teachers", teacher);
 
 app.use("/", (err, req, res, next) => {
   console.log(err.stack);
