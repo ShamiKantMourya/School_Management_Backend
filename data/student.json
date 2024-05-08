@@ -1,0 +1,47 @@
+[
+  {
+    "name": "John Doe",
+    "age": 12,
+    "grade": "B+",
+    "gender": "Male",
+    "attendance": 92,
+    "marks": 85,
+    "class": "Std VI"
+  },
+  {
+    "name": "Jane Smith",
+    "age": 11,
+    "grade": "A",
+    "gender": "Female",
+    "attendance": 98,
+    "marks": 92,
+    "class": "Std V"
+  },
+  {
+    "name": "Alex Johnson",
+    "age": 14,
+    "grade": "C",
+    "gender": "Transgender",
+    "attendance": 80,
+    "marks": 68,
+    "class": "Std VIII"
+  },
+  {
+    "name": "Emily Davis",
+    "age": 15,
+    "grade": "A+",
+    "gender": "Female",
+    "attendance": 96,
+    "marks": 98,
+    "class": "Std X"
+  },
+  {
+    "name": "Taylor Lee",
+    "age": 13,
+    "grade": "B",
+    "gender": "Transgender",
+    "attendance": 88,
+    "marks": 75,
+    "class": "Std VII"
+  }
+]

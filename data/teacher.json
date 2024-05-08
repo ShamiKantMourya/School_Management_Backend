@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Michael Brown",
+    "subject": "Physics",
+    "contact": 8777532550
+  },
+  {
+    "name": "Sarah Clark",
+    "subject": "Chemistry",
+    "contact": 8734767234
+  },
+  {
+    "name": "David Turner",
+    "subject": "Biology",
+    "contact": 084854574543
+  },
+  {
+    "name": "Olivia Martin",
+    "subject": "French",
+    "contact": 8762754263
+  },
+  {
+    "name": "Ethan Harris",
+    "subject": "Spanish",
+    "contact": 6783562266
+  }
+]
