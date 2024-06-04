@@ -25,17 +25,10 @@ const seedTeacherDatabase = async () => {
 exports.getAllTeachers = async (req, res) => {
   try {
     const teachers = await Teacher.find({});
-    if (teachers) {
-      res.status(200).json({
-        success: true,
-        teacher: teachers,
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "No teachers found",
-      });
-    }
+    res.status(200).json({
+      success: true,
+      teacher: teachers,
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -49,18 +42,11 @@ exports.addTeacher = async (req, res) => {
     const teacher = req.body;
     const newTeacher = new Teacher(teacher);
     const savedTeacher = await newTeacher.save();
-    if (savedTeacher) {
-      res.status(201).json({
-        success: true,
-        teacher: savedTeacher,
-        message: "Teacher added successfully",
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "Error while adding teacher",
-      });
-    }
+    res.status(201).json({
+      success: true,
+      teacher: savedTeacher,
+      message: "Teacher added successfully",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -76,18 +62,11 @@ exports.editTeacher = async (req, res) => {
     const editedTeacher = await Teacher.findByIdAndUpdate(teacherId, data, {
       new: true,
     });
-    if (editedTeacher) {
-      res.status(200).json({
-        success: true,
-        teacher: editedTeacher,
-        message: "Teacher edited successfully",
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "Error while editing teacher",
-      });
-    }
+    res.status(200).json({
+      success: true,
+      teacher: editedTeacher,
+      message: "Teacher edited successfully",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -100,18 +79,11 @@ exports.deleteTeacher = async (req, res) => {
   try {
     const teacherId = req.params.teacherId;
     const deletedTeacher = await Teacher.findByIdAndDelete(teacherId);
-    if (deletedTeacher) {
-      res.status(200).json({
-        success: true,
-        teacher: deletedTeacher,
-        message: "Teacher deleted successfully",
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "Error while deleting teacher",
-      });
-    }
+    res.status(200).json({
+      success: true,
+      teacher: deletedTeacher,
+      message: "Teacher deleted successfully",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -124,18 +96,11 @@ exports.getTeacherByName = async (req, res) => {
   try {
     const teacherName = req.params.teacherName;
     const teacher = await Teacher.findOne({ name: teacherName });
-    if (teacher) {
-      res.status(200).json({
-        success: true,
-        teacher: teacher,
-        message: "Teacher found successfully",
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "Error while finding teacher",
-      });
-    }
+    res.status(200).json({
+      success: true,
+      teacher: teacher,
+      message: "Teacher found successfully",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,

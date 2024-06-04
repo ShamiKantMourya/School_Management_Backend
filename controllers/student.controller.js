@@ -26,17 +26,10 @@ const seedStudentDatabase = async () => {
 exports.getAllStudents = async (req, res) => {
   try {
     const students = await Student.find({});
-    if (students) {
-      res.status(200).json({
-        success: true,
-        student: students,
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "No students found",
-      });
-    }
+    res.status(200).json({
+      success: true,
+      student: students,
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -50,18 +43,11 @@ exports.addStudent = async (req, res) => {
     const student = req.body;
     const newStudent = new Student(student);
     const savedStudent = await newStudent.save();
-    if (savedStudent) {
-      res.status(201).json({
-        success: true,
-        student: savedStudent,
-        message: "Student added successfully",
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "Error while adding student",
-      });
-    }
+    res.status(201).json({
+      success: true,
+      student: savedStudent,
+      message: "Student added successfully",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -77,18 +63,11 @@ exports.editStudent = async (req, res) => {
     const editedStudent = await Student.findByIdAndUpdate(studentId, data, {
       new: true,
     });
-    if (editedStudent) {
-      res.status(200).json({
-        success: true,
-        student: editedStudent,
-        message: "Student edited successfully",
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "Error while editing student",
-      });
-    }
+    res.status(200).json({
+      success: true,
+      student: editedStudent,
+      message: "Student edited successfully",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -101,18 +80,11 @@ exports.deleteStudent = async (req, res) => {
   try {
     const studentId = req.params.studentId;
     const deletedStudent = await Student.findByIdAndDelete(studentId);
-    if (deletedStudent) {
-      res.status(200).json({
-        success: true,
-        student: deletedStudent,
-        message: "Student deleted successfully",
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "Error while deleting student",
-      });
-    }
+    res.status(200).json({
+      success: true,
+      student: deletedStudent,
+      message: "Student deleted successfully",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -125,18 +97,11 @@ exports.getStudentByName = async (req, res) => {
   try {
     const studentName = req.params.studentName;
     const student = await Student.findOne({ name: studentName });
-    if (student) {
-      res.status(200).json({
-        success: true,
-        student: student,
-        message: "Student found successfully",
-      });
-    } else {
-      res.status(400).json({
-        success: false,
-        message: "Error while finding student",
-      });
-    }
+    res.status(200).json({
+      success: true,
+      student: student,
+      message: "Student found successfully",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
